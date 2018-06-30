@@ -11,7 +11,6 @@ public class DemoController {
 
     @GetMapping(value = "/hello")
     @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
     public String hello() {
         return "Hello from Keedio";
     }
