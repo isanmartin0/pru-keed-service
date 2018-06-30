@@ -6,11 +6,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/keedio")
 public class DemoController {
 
+    @GetMapping(value = "/hello")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @GetMapping(value = "/hello")
     public String hello() {
         return "Hello from Keedio";
     }
