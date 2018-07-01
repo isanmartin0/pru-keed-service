@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class SubscribeController {
@@ -20,6 +22,13 @@ public class SubscribeController {
   @Autowired
   public SubscribeController(SubscribeService subscribeService) {
     this.subscribeService = subscribeService;
+  }
+
+  @GetMapping(value = "/hello")
+  @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
+  public String hello() {
+    return "Hello from Keedio";
   }
 
   @PostMapping("/")
