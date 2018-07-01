@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class SubscribeController {
 
   private final SubscribeService subscribeService;
@@ -26,13 +27,11 @@ public class SubscribeController {
 
   @GetMapping(value = "/hello")
   @ResponseStatus(HttpStatus.OK)
-  @ResponseBody
   public String hello() {
     return "Hello from Keedio";
   }
 
   @PostMapping("/")
-  @ResponseBody
   @Transactional(readOnly = true)
   public ResponseEntity<Tag> subscribeTags(@RequestBody Tag tags) {
     return new ResponseEntity<>(this.subscribeService.addTags(tags), HttpStatus.CREATED);
