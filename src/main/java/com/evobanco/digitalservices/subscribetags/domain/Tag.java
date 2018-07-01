@@ -16,17 +16,16 @@ import java.util.Optional;
 public class Tag implements Serializable {
 
   @Id
-  @Column(name = "ID")
   @Setter(AccessLevel.PROTECTED)
   @GeneratedValue(strategy = GenerationType.AUTO) private Long id; // will be set when persisting
 
-  @Column(nullable = false, name = "DEVICE_ID")
+  @NonNull
   private String deviceId;
 
-  @Column(nullable = false, name = "CLIENT_ID")
+  @NonNull
   private String clientId = "DEFAULT-CLIENT-ID";
 
-  @Column(nullable = false, name = "TIMESTAMP_STR")
+  @NonNull
   private String timestamp = String.valueOf(new Timestamp(System.currentTimeMillis()));
 
   public Tag(String deviceId, String clientId, String timestamp) {
