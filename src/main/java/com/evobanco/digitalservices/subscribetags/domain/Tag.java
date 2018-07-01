@@ -1,4 +1,4 @@
-package com.keedio.demo.domain;
+package com.evobanco.digitalservices.subscribetags.domain;
 
 
 import lombok.*;

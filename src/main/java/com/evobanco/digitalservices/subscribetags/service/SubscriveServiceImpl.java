@@ -1,6 +1,6 @@
-package com.keedio.demo.service;
+package com.evobanco.digitalservices.subscribetags.service;
 
-import com.keedio.demo.domain.Tag;
+import com.evobanco.digitalservices.subscribetags.domain.Tag;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 

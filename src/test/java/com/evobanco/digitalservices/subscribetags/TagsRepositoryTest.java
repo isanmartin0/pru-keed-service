@@ -1,7 +1,7 @@
-package con.keedio.demo;
+package com.evobanco.digitalservices.subscribetags;
 
-import com.keedio.demo.domain.Tag;
-import com.keedio.demo.service.TagsRepository;
+import com.evobanco.digitalservices.subscribetags.domain.Tag;
+import com.evobanco.digitalservices.subscribetags.service.TagsRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

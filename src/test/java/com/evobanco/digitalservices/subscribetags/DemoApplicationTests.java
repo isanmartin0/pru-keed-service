@@ -1,4 +1,4 @@
-package con.keedio.demo;
+package com.evobanco.digitalservices.subscribetags;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
