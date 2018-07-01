@@ -15,14 +15,19 @@ import java.util.Optional;
 @NoArgsConstructor // <--- THIS is it
 public class Tag implements Serializable {
 
-  private @Id
+  @Id
+  @Column(name = "ID")
   @Setter(AccessLevel.PROTECTED)
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  Long id; // will be set when persisting
+  @GeneratedValue(strategy = GenerationType.AUTO) private Long id; // will be set when persisting
 
-  private @NonNull String deviceId;
-  private @NonNull String clientId = "DEFAULT-CLIENT-ID";
-  private @NonNull String timestamp = String.valueOf(new Timestamp(System.currentTimeMillis()));
+  @Column(nullable = false, name = "DEVICE_ID")
+  private String deviceId;
+
+  @Column(nullable = false, name = "CLIENT_ID")
+  private String clientId = "DEFAULT-CLIENT-ID";
+
+  @Column(nullable = false, name = "TIMESTAMP_STR")
+  private String timestamp = String.valueOf(new Timestamp(System.currentTimeMillis()));
 
   public Tag(String deviceId, String clientId, String timestamp) {
     this.deviceId = deviceId;

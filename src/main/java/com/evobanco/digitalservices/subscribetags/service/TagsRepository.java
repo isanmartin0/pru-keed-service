@@ -1,7 +1,8 @@
 package com.evobanco.digitalservices.subscribetags.service;
 
 import com.evobanco.digitalservices.subscribetags.domain.Tag;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.Repository;
 
-public interface TagsRepository extends CrudRepository<Tag, Long> {
+public interface TagsRepository extends Repository<Tag, Long> {
+    Tag save(Tag persisted);
 }
